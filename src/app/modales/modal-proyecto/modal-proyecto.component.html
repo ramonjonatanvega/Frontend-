@@ -1,0 +1,116 @@
+<div class="modal fade" id="modal-agregar-proyecto" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered justify-content-center">
+        <div class="modal-content text-white text-center rounded-4">
+            <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLabelAgregarProyecto">Agregar Proyecto</h3>
+                <button type="button" class="btn-close bg-white rounded-circle mb-4" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+            <!-- boton PEN-->
+
+            <div class="col-1">
+                <li type="button" class="list-group-item mt-4
+                              mb-4 itemPenColor" data-bs-toggle="modal" data-bs-target="#proyectoModalpen"> <i
+                        class="fa-sharp fa-solid fa-pen"></i></li>
+            </div>
+
+
+            <div class="modal-body">
+                <form [formGroup]="proyecForm" (ngSubmit)="crearNuevoProyecto()" novalidate #form="ngForm">
+                    <div class="mb-3-sm ">
+                        <label for="nombr" class="form-label">Nombre Proyecto</label>
+                        <input type="text" class="form-control text-center" id="nombr" name="nombre" required
+                            formControlName="nombre" placeholder="Ingrese Nombre......"
+                            [ngClass]="{'is-invalid': Nombre.errors && Nombre.touched, 'is-valid': !Nombre.errors && Nombre.touched}">
+                        <!--formulario reactivo-->
+                        <div *ngIf="Nombre.errors && Nombre.touched">
+                            <p *ngIf="Nombre.hasError('required')" class="text-danger">
+                                El Nombre es requerido.
+                            </p>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="mb-3">
+                        <label for="image" class="form-label">Imagen</label>
+                        <!--formControlName Pide imagen requerida-->
+                        <input type="file" class="form-control text-center" id="image" name="imagen" formControlName="imagen"
+                            [ngClass]="{'is-invalid': Imagen.errors && Imagen.touched, 'is-valid': !Imagen.errors && Imagen.touched}"
+                            (change)="uploadImage($event)">
+                        <!--formulario reactivo-->
+                        <div *ngIf="Imagen.errors && Imagen.touched">
+                            <p *ngIf="Imagen.hasError('required')" class="text-danger">
+                                La Imagen es Requerida.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="imagen">
+                        <img [src]="imagenesService.url" width="200px">
+
+                    </div>
+
+                    <br>
+
+                    <div class="mb-3">
+                        <label for="fech">Fecha del Proyecto<small></small></label>
+                        <div class="calendario">
+                            <input type="date" class="form-control text-center" id="fech" name="fecha" formControlName="fecha"
+                                [ngClass]="{'is-invalid': Fecha.errors && Fecha.touched, 'is-valid': !Fecha.errors && Fecha.touched}">
+                            <!--formulario reactivo-->
+                            <div *ngIf="Fecha.errors && Fecha.touched">
+                                <p *ngIf="Fecha.hasError('required')" class="text-danger">
+                                    Fecha Requerida.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="mb-3-sm ">
+                        <label for="urll" class="form-label">Url</label>
+                        <!--formControlName pide puesto requerida y placeholder pide ingrese puesto-->
+                        <input type="text" class="form-control text-center" id="urll" name="url" required formControlName="url"
+                            placeholder="Ingrese Url......"
+                            [ngClass]="{'is-invalid': Url.errors && Url.touched, 'is-valid': !Url.errors && Url.touched}">
+                        <!--formulario reactivo-->
+                        <div *ngIf="Url.errors && Url.touched">
+                            <p *ngIf="Url.hasError('required')" class="text-danger">
+                                Url Requerida.
+                            </p>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="mb-3">
+                        <label for="descrip" class="form-label">Descripcion</label>
+                        <!--formControlName pide descripcion requerida y placeholder pide ingrese Descripcion-->
+                        <textarea rows="5" type="text" class="form-control text-center" id="descrip" name="descripcion"
+                            placeholder=" Descripcion del Proyecto......" formControlName="descripcion" required
+                            [ngClass]="{'is-invalid': Descripcion.errors && Descripcion.touched, 'is-valid': !Descripcion.errors && Descripcion.touched}"></textarea>
+                        <div *ngIf="Descripcion.errors && Descripcion.touched">
+                            <p *ngIf="Descripcion.hasError('required')" class="text-danger">
+                                La descripcion es requerida.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-ligth" (click)="limpiar()">Limpiar</button>
+                        <button type="submit"
+                            [disabled]="Nombre?.hasError('required') || Imagen?.hasError('required') || Fecha?.hasError('required') || Url?.hasError('required') || Descripcion?.hasError('required')"
+                            data-bs-dismiss="modal" class="btn btn-primary">Aceptar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+<app-editar-proyecto></app-editar-proyecto>

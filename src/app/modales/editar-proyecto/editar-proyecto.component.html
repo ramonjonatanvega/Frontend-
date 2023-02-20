@@ -1,0 +1,80 @@
+<!-- Modal   PEN de PROYECTO-->
+<div class="modal fade" id="proyectoModalpen" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered justify-content-center">
+    <div class="modal-content text-white text-center rounded-4">
+      <div class="modal-header ">
+        <h3 class="modal-title " id="exampleModalLabel">Editar Proyecto</h3>
+        <button type="button" class="btn-close bg-white rounded-circle mb-4" data-bs-dismiss="modal"
+          aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <form [formGroup]="proyecForm" name="proyectoform">
+            <div class="modal-body">
+
+              <ul class="p-0">
+                <li *ngFor="let proyecto of proyectos" class="d-flex justify-content-between align-items-center m-1 ">
+                  <span>{{proyecto.id}}. {{proyecto.nombre|uppercase}}</span>
+                  <span class="d-flex justify-content-between gap-2">
+                    <!--lapicito rojo que se cambia al tocarlo-->
+                    <button type="button" class="btn btn-sm btn-outline-success pl-1 pr-1 m-0"
+                      (click)="cargarDetalle(proyecto.id)">
+                      <i class="fa-solid fa-pen"></i>
+                    </button>
+                    <!--Tachico de Basura que se hace fondo rojo al tocarlo-->
+                    <button type="button" class="btn btn-sm btn-outline-danger pl-1 pr-1 m-0"
+                      (click)="borrar(proyecto.id)">
+                      <i class="fa-solid fa-trash"></i>
+                    </button>
+                  </span>
+                </li>
+              </ul>
+              <!--esto es la validacion  renderizado condicional-->
+              <div class="input-group mb-3 bg-light" *ngIf="!!proyecForm.value.id">
+                <div class="input-group-prepend border-0">
+                  <span class="input-group-text border-0" id="basic-addon1">ID:</span>
+                </div>
+                <input class="form-control outline-none border-0 bg-transparent" type="text" readonly
+                  formControlName="id">
+              </div>
+
+
+              <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control text-center" id="nombre" placeholder="Ingrese nombre....."
+                  formControlName="nombre">
+              </div>
+
+              <div class="mb-3">
+                <label for="imagen" class="form-label">Imagen</label>
+                <input type="url" class="form-control text-center" id="imagen" placeholder="Ingrese URL de la Imagen....."
+                  formControlName="imagen">
+              </div>
+
+              <div class="mb-3">
+                <label for="fecha" class="form-label">Fecha </label>
+                <input type="fecha" class="form-control text-center" id="fecha" placeholder="Ingrese Fecha....." formControlName="fecha">
+              </div>
+ 
+              <div class="mb-3">
+                <label for="url" class="form-label">Url del Proyecto</label>
+                <input type="text" class="form-control text-center" id="url" formControlName="url" placeholder="Ingrese Url....">
+              </div>
+
+              <div class="mb-3">
+                <label for="descripcion" class="form-label">Descripcion </label>
+                <textarea rows="5" type="text" class="form-control text-center" id="descripcion" formControlName="descripcion"
+                  placeholder="Ingrese Descripcion....."></textarea>
+              </div>
+
+              <div class="modal-footer">
+                <button class="btn btn-secondary" (click)="proyecForm.reset()">RESET</button>
+                <button class="btn btn-secondary" (click)="guardar()">GUARDAR DATOS</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

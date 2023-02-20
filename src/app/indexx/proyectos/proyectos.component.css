@@ -1,0 +1,60 @@
+ /*proyectos-colores letras*/
+ div#proyectos{
+    text-shadow:0rem 0.125rem 1rem;
+    
+ }
+
+section.proyectos{  
+     margin-top: -3.4rem; 
+}
+/*imagen tarjeta web portafolio proyecto*/
+.card-body{
+   color:#000000;  
+   width: 18rem auto; 
+}
+
+
+
+
+/*contenedor tarjetas proyecto*/
+.contenedor-secundario{
+   width: 1rem auto;
+}
+
+#contenedor-btn-proyecto{
+   margin-top: -1.25rem;
+}
+
+
+/*nombre del proyecto en la card*/
+.card-title{
+   font-size: 1.563rem;
+}
+
+/*tamaño de letra de la descripcion de la card*/
+.card-text{
+   font-size: 1.25rem;
+}
+
+/*configuracion borde y tamaño y distancia boton de la card*/
+.btn{
+   background: #740B44;
+   color: #ffffff;
+   border-radius: 0.625rem;
+   border: none;
+   padding: 0.625rem;
+   font-size: 1.25rem;
+   font-weight: bold;
+   width: 100%;
+}
+
+/*efecto hover del boton de la card*/
+.btn:hover{
+   background: #460629;
+   color: #ffffff;
+   transform: scale(1.05);
+   transition: 0.5s;
+}
+
+
+

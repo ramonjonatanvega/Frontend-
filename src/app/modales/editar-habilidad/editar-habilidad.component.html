@@ -1,0 +1,67 @@
+<!-- Modal   PEN de Habilidad-->
+<div class="modal fade" id="habilidadModalpen" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered justify-content-center">
+    <div class="modal-content text-white text-center rounded-4">
+      <div class="modal-header ">
+        <h3 class="modal-title " id="exampleModalLabelEditarHabilidad">Editar habilidad</h3>
+        <button type="button" class="btn-close bg-white rounded-circle mb-4" data-bs-dismiss="modal"
+          aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <form [formGroup]="habiliForm" name="habilidadform">
+            <div class="modal-body">
+
+              <ul class="p-0">
+                <li *ngFor="let habilidad of habilidades"
+                  class="d-flex justify-content-between align-items-center m-1 ">
+                  <span>{{habilidad.id}}. {{habilidad.nombreHabilidad|uppercase}}</span>
+                  <span class="d-flex justify-content-between gap-2">
+                    <!--lapicito rojo que se cambia al tocarlo-->
+                    <button type="button" class="btn btn-sm btn-outline-success pl-1 pr-1 m-0"
+                      (click)="cargarDetalle(habilidad.id)">
+                      <i class="fa-solid fa-pen"></i>
+                    </button>
+                    <!--Tachico de Basura que se hace fondo rojo al tocarlo-->
+                    <button type="button" class="btn btn-sm btn-outline-danger pl-1 pr-1 m-0"
+                      (click)="borrar(habilidad.id)">
+                      <i class="fa-solid fa-trash"></i>
+                    </button>
+                  </span>
+                </li>
+              </ul>
+              <!--esto es la validacion  renderizado condicional-->
+              <div class="input-group mb-3 bg-light" *ngIf="!!habiliForm.value.id">
+                <div class="input-group-prepend border-0">
+                  <span class="input-group-text border-0" id="basic-addon1">ID:</span>
+                </div>
+                <input class="form-control outline-none border-0 bg-transparent" type="text" readonly
+                  formControlName="id">
+              </div>
+
+
+              <div class="mb-3">
+                <label for="nombreHabilidad" class="form-label">Nombre de Habilidad</label>
+                <input type="text" class="form-control text-center" id="nombreHabilidad" placeholder="Ingrese Habilidad....."
+                  formControlName="nombreHabilidad">
+              </div>
+
+
+
+              <div class="mb-3">
+                <label for="porcentaje" class="form-label">Modificar Porcentaje de Manejo (Escala 0-100)</label>
+                <input type="number" min="0" max="100" id="porcentaje" formControlName="porcentaje"
+                  placeholder="porcentaje....">
+              </div>
+
+              <div class="modal-footer">
+                <button class="btn btn-secondary" (click)="habiliForm.reset()">RESET</button>
+                <button class="btn btn-secondary" (click)="guardar()">GUARDAR DATOS</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

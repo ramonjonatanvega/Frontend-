@@ -1,0 +1,135 @@
+<!-- Modal   PEN de Persona-->
+<div class="modal fade" id="personaModalpen" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered justify-content-center">
+    <div class="modal-content text-white text-center rounded-4">
+      <div class="modal-header ">
+        <h3 class="modal-title " id="exampleModalLabelEditarPersona">Editar Persona</h3>
+        <button type="button" class="btn-close bg-white rounded-circle mb-4" data-bs-dismiss="modal"
+          aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+
+          <form [formGroup]="persoForm" name="personaform">
+            <div class="modal-body">
+              <ul class="p-0">
+                <li *ngFor="let persona of personas" class="d-flex justify-content-between align-items-center m-1 ">
+                  <span>{{persona.id}}. {{persona.nombre|uppercase}}</span>
+                  <span class="d-flex justify-content-between gap-2">
+                    <!--lapicito rojo que se cambia al tocarlo-->
+                    <button type="button" class="btn btn-sm btn-outline-success pl-1 pr-1 m-0"
+                      (click)="cargarDetalle(persona.id)">
+                      <i class="fa-solid fa-pen"></i>
+                    </button>
+                    <!--Tachico de Basura que se hace fondo rojo al tocarlo-->
+                    <button type="button" class="btn btn-sm btn-outline-danger pl-1 pr-1 m-0"
+                      (click)="borrar(persona.id)">
+                      <i class="fa-solid fa-trash"></i>
+                    </button>
+                  </span>
+                </li>
+              </ul>
+              <!--esto es la validacion  renderizado condicional-->
+              <div class="input-group mb-3 bg-light" *ngIf="!!persoForm.value.id">
+                <div class="input-group-prepend border-0">
+                  <span class="input-group-text border-0" id="basic-addon1">ID:</span>
+                </div>
+                <input class="form-control outline-none border-0 bg-transparent" type="text" readonly
+                  formControlName="id">
+              </div>
+
+
+              <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombrePersEditar" placeholder="Ingrese Nombre"
+                  formControlName="nombre">
+              </div>
+
+              <div class="mb-3">
+                <label for="apellido" class="form-label">Apellido</label>
+                <input type="text" class="form-control" id="apellido" formControlName="apellido"
+                  placeholder="Ingrese Apellido ">
+              </div>
+
+              <div class="mb-3">
+                <label for="banner" class="form-label">Imagen Banner 1</label>
+                <input type="url" class="form-control" id="banner1" formControlName="banner"
+                  placeholder="Ingrese Imagen banner " >
+              </div>
+
+              <div class="mb-3">
+                <label for="banner" class="form-label">Imagen Banner 2</label>
+                <input type="url" class="form-control" id="banner2" formControlName="banner1"
+                  placeholder="Ingrese Imagen banner " >
+              </div>
+
+              <div class="mb-3">
+                <label for="banner" class="form-label">Imagen Banner 3</label>
+                <input type="url" class="form-control" id="banner3" formControlName="banner2"
+                  placeholder="Ingrese Imagen banner " >
+              </div>
+
+              <div class="mb-3">
+                <label for="banner" class="form-label">Imagen Banner 4</label>
+                <input type="url" class="form-control" id="banner4" formControlName="banner3"
+                  placeholder="Ingrese Imagen banner " >
+              </div>
+
+              <div class="mb-3">
+                <label for="foto_perfil" class="form-label">Foto Perfil</label>
+                <input type="url" class="form-control" id="foto_perfil" formControlName="foto_perfil"
+                  placeholder="Ingrese Foto de perfil" >
+              </div>
+
+
+
+
+              <div class="mb-3">
+                <label for="titulo" class="form-label">Titulo</label>
+                <input type="text" class="form-control" id="tituloPersEditar" formControlName="titulo"
+                  placeholder="Ingrese Titulo">
+              </div>
+
+
+              <div class="mb-3">
+                <label for="ubicacion" class="form-label">Ubicacion</label>
+                <input type="text" class="form-control" id="ubicacion" formControlName="ubicacion"
+                  placeholder="Ingese Ubicacion">
+              </div>
+
+
+              <div class="mb-3">
+                <label for="correo" class="form-label">Correo</label>
+                <input type="text" class="form-control" id="correo" formControlName="correo"
+                  placeholder="Ingrese Nuevo Correo" readonly>
+              </div>
+
+
+              <div class="mb-3">
+                <label for="contrasenia" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="contrasenia" formControlName="contrasenia"
+                  placeholder="Ingese Nueva Contrasenia" autocomplete="on" readonly>
+                  <p *ngIf="Contrasenia?.hasError('minlength')" class="text-danger">
+                    Debe ingresar minimo 8 caracteres
+                </p>
+              </div>
+
+
+              <div class="mb-3">
+                <label for="acerca_de" class="form-label">Acerca de</label>
+                <textarea rows="5" type="text" class="form-control" id="acerca_de" formControlName="acerca_de"
+                  placeholder="Ingrese Descripcion"></textarea>
+              </div>
+
+
+              <div class="modal-footer">
+                <button class="btn btn-secondary" (click)="persoForm.reset()">RESET</button>
+                <button class="btn btn-secondary" (click)="guardar()">GUARDAR DATOS</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

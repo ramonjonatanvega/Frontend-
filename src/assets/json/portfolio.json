@@ -1,0 +1,116 @@
+{
+    "nombre": "Jonatan",
+    "apellido": "Vega",
+    "acerca": "Desarrollo web y aplicaciones digitales.",
+
+    "educaciones": [
+        {
+            "id": 0,
+            "nombreInstitucion": "Instituto Educacion Secundaria Felipe Santiago Estenos",
+            "logoInstitucion": "assets/IMG/estenos.png",
+            "titulo":"bachiller",
+            "fechaInicio": "03-03-1999",
+            "fechaFin": "12-12-2003"
+            
+           
+        },
+        {
+            "id": 1,
+            "nombreInstitucion": "Instituto World Data System",
+            "logoInstitucion": "assets/IMG/images.png",
+            "titulo": "Tecnico en Computacion y Sistemas",
+            "fechaInicio": "03-03-1999",
+            "fechaFin": "12-12-2003"
+            
+            
+        },
+        {
+            "id": 2,
+            "nombreInstitucion": "Argentina Programa",
+            "logoInstitucion": "assets/IMG/channels4_profile.png",
+            "titulo": "Desarrolo Web Full Stack.",
+            "fechaInicio": "03-03-1999",
+            "fechaFin": "12-12-2003"
+            
+            
+        }
+    ],
+
+    "experiencias": [
+        {
+            "id": 0,
+            "nombreEmpresa":"ElDon",
+            "logoEmpresa":"assets/IMG/descarga.png",           
+            "puesto":"Manejo de Robot de Corte y Tizador Computarizado",
+            "descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque unde omnis adipisci aliquam, eligendi earum fuga accusamus est modi explicabo reiciendis laboriosam, cum et ut eos aspernatur asperiores. A, aspernatur.",
+            "fechaInicio": "03-03-1999",
+            "fechaFin": "12-12-2003"
+        },
+        {
+            "id": 1,
+            "nombreEmpresa":"Low Cost - Soluciones informaticas",
+            "logoEmpresa":"assets/IMG/lowww.png",       
+            "puesto":"Tecnico en Reparación Y Systemas",
+            "descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque unde omnis adipisci aliquam, eligendi earum fuga accusamus est modi explicabo reiciendis laboriosam, cum et ut eos aspernatur asperiores. A, aspernatur.",
+            "fechaInicio": "03-03-1999",
+            "fechaFin": "12-12-2003"
+        },
+        {
+            "id": 2,
+            "nombreEmpresa":"Electronica Low-Cost",
+            "logoEmpresa":"assets/IMG/servicio-tecnico.png",           
+            "puesto":"Reparacion de electronica en General",
+            "descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque unde omnis adipisci aliquam, eligendi earum fuga accusamus est modi explicabo reiciendis laboriosam, cum et ut eos aspernatur asperiores. A, aspernatur.",
+            "fechaInicio": "03-03-1999",
+            "fechaFin": "12-12-2003"
+        }
+    ],
+
+    "habilidades": [
+        {
+            "id": 0,
+            "curso": "HTML",
+            "porcentaje": "85",
+            "color": "bg-success"
+        },
+        {
+            "id": 1,
+            "curso": "CSS",
+            "porcentaje": "70",   
+            "color": "bg-primary"
+        },
+        {
+            "id": 2,
+            "nombreHabilidad": "JAVASCRIPT",
+            "porcentaje": "55",
+            "color": "bg-danger"   
+        },
+        {
+            "id": 3,
+            "curso": "TYPESCRIPT",
+            "porcentaje": "65",
+            "color": "bg-danger"   
+        },
+        {
+            "id": 4,
+            "curso": "ANGULAR",
+            "porcentaje": "55",
+            "color": "bg-warning"   
+        },
+        {
+            "id": 5,
+            "curso": "BOOTSTRAP",
+            "porcentaje": "80",
+            "color": "bg-info"   
+        }
+    ],
+
+    "proyectos": [
+        {
+            "id": 0,
+            "nombreProyecto":"Web Portofolio personal.",
+            "logoProyecto":"assets/IMG/Captura de pantalla (1).png",    
+            "descripcionProyecto":"Pagina portofolio personal realizada con HTML5, CSS, BOOTSTRAP, JAVA, ANGULAR Y SPRINGBOOT"
+        }
+    ]
+}

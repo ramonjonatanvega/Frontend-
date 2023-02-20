@@ -1,0 +1,59 @@
+<section id="dashboard" class="dashboard">
+  <div class="container-fluid ">
+    <br>
+    <br>
+    <div class="row">
+      <!--barra de administracion sidebar-->
+      <div class="col-3">
+        <div class="d-flex align-items-start">
+          <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            
+            <a routerLink="/index"><button class="nav-link active" id="v-pills-home-tab" type="button">Home</button></a>
+
+            <!--agregar perfil-->
+            <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="modal"
+              data-bs-target="#modal-agregar-persona" type="button" role="tab" aria-controls="v-pills-profile"
+              aria-selected="false">Perfil</button>
+
+            <!--<button class="nav-link" id="v-pills-acerca-tab" data-bs-toggle="pill" data-bs-target="#v-pills-acerca" 
+              type="button" role="tab" aria-controls="v-pills-acerca" aria-selected="false">Acerca de mi</button>-->
+
+            <!--agregar experiencia-->
+            <button class="nav-link" id="v-pills-exp-tab" data-bs-toggle="modal"
+              data-bs-target="#modal-agregar-experiencia" type="button" role="tab" aria-controls="v-pills-exp"
+              aria-selected="false">Experiencia Laboral</button>
+
+            <!--agregar educacion-->
+            <button class="nav-link" id="v-pills-educacion-tab" data-bs-toggle="modal"
+              data-bs-target="#modal-agregar-educacion" type="button" role="tab" aria-controls="v-pills-educacion"
+              aria-selected="false">Educacion</button>
+
+            <!--agregar habilidad-->
+            <button class="nav-link" id="v-pills-habilidades-tab" data-bs-toggle="modal"
+              data-bs-target="#modal-agregar-habilidad" type="button" role="tab" aria-controls="v-pills-habilidades"
+              aria-selected="false">Hard & soft Skills</button>
+
+            <!--agregar proyecto-->
+            <button class="nav-link" id="v-pills-proyectos-tab" data-bs-toggle="modal"
+              data-bs-target="#modal-agregar-proyecto" type="button" role="tab" aria-controls="v-pills-proyectos"
+              aria-selected="false">Proyectos</button>
+          </div>
+        </div>
+      </div>
+
+      <app-modal-persona></app-modal-persona> <!--agregar perfil-->
+      <app-modal-experiencia></app-modal-experiencia><!--agregar experiencia-->
+      <app-modal-educacion></app-modal-educacion> <!--agregar educacion-->
+      <app-modal-habilidad></app-modal-habilidad> <!--agregar habilidad-->
+      <app-modal-proyecto></app-modal-proyecto> <!--agregar proyecto-->
+
+      <!--<div class="tab-pane fade" id="v-pills-acerca" role="tabpanel" aria-labelledby="v-pills-acerca-tab" tabindex="0">
+        
+       </div>-->
+
+    </div><!--cierra tab-pane-->
+  </div><!--cierra div padre-->
+
+
+  
+</section>

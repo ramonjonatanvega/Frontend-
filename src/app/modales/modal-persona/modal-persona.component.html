@@ -1,0 +1,236 @@
+<!--dashboard perfil-->
+<div class="modal fade" id="modal-agregar-persona" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered justify-content-center">
+        <div class="modal-content text-white text-center rounded-4">
+            <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLabelAgregarPersona">Agregar Persona</h3>
+                <button type="button" class="btn-close bg-white rounded-circle mb-4" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+            <!-- boton PEN-->
+
+            <div class="col-1">
+                <li type="button" class="list-group-item mt-4
+            mb-4 itemPenColor" data-bs-toggle="modal" data-bs-target="#personaModalpen"> <i
+                        class="fa-sharp fa-solid fa-pen"></i></li>
+            </div>
+
+            <div class="modal-body">
+                <form (ngSubmit)="onCrear()" [formGroup]="persoForm">
+                    <div class="mb-3-sm">
+                        <label for="formFileSm" class="form-label">Nombre</label>
+                        <!--formControlName pide nombre requerido y placeholder pide ingrese puesto-->
+                        <input class="form-control form-control-sm" id="nombrePersAgregar" type="text"
+                            formControlName="nombre" placeholder="Ingrese Nombre......"
+                            [ngClass]="{'is-invalid': Nombre.errors && Nombre.touched, 'is-valid': !Nombre.errors && Nombre.touched}"
+                            readonly>
+                        <!--formulario reactivo-->
+                        <div *ngIf="Nombre.errors && Nombre.touched">
+                            <p *ngIf="Nombre.hasError('required')" class="text-danger">
+                                El Nombre es requerido.
+                            </p>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="mb-3">
+                        <label for="formFileSm" class="form-label">Apellido</label>
+                        <!--formControlName pide apellido requerido y placeholder pide ingrese puesto-->
+                        <input class="form-control form-control-sm" id="apellidoPersAgregar" type="text"
+                            formControlName="apellido" placeholder="Ingrese Apellido......"
+                            [ngClass]="{'is-invalid': Apellido.errors && Apellido.touched, 'is-valid': !Apellido.errors && Apellido.touched}"
+                            readonly>
+                        <!--formulario reactivo-->
+                        <div *ngIf="Apellido.errors && Apellido.touched">
+                            <p *ngIf="Apellido.hasError('required')" class="text-danger">
+                                Apellido Requerido.
+                            </p>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="mb-3">
+                        <label for="formFileSm" class="form-label">Imagen Banner 1</label>
+                        <!--formControlName pide banner requerida-->
+                        <input class="form-control form-control-sm" id="banner1PersAgregar" type="file"
+                            formControlName="banner"
+                            [ngClass]="{'is-invalid': Banner.errors && Banner.touched, 'is-valid': !Banner.errors && Banner.touched}"
+                            (change)="uploadImage($event)" readonly>
+                        <!--formulario reactivo-->
+                        <div *ngIf="Banner.errors && Banner.touched">
+                            <p *ngIf="Banner.hasError('required')" class="text-danger">
+                                Imagen Requerida.
+                            </p>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="mb-3">
+                        <label for="formFileSm" class="form-label">Imagen Banner 2</label>
+                        <!--formControlName pide banner requerida-->
+                        <input class="form-control form-control-sm" id="banner2PersAgregar" type="file"
+                            formControlName="banner1"
+                            [ngClass]="{'is-invalid': Banner1.errors && Banner1.touched, 'is-valid': !Banner1.errors && Banner1.touched}"
+                            (change)="uploadImage($event)" readonly>
+                        <!--formulario reactivo-->
+                        <div *ngIf="Banner1.errors && Banner1.touched">
+                            <p *ngIf="Banner1.hasError('required')" class="text-danger">
+                                Imagen Requerida.
+                            </p>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="mb-3">
+                        <label for="formFileSm" class="form-label">Imagen Banner 3</label>
+                        <!--formControlName pide banner requerida-->
+                        <input class="form-control form-control-sm" id="banner3PersAgregar" type="file"
+                            formControlName="banner2"
+                            [ngClass]="{'is-invalid': Banner2.errors && Banner2.touched, 'is-valid': !Banner2.errors && Banner2.touched}"
+                            (change)="uploadImage($event)" readonly>
+                        <!--formulario reactivo-->
+                        <div *ngIf="Banner2.errors && Banner2.touched">
+                            <p *ngIf="Banner2.hasError('required')" class="text-danger">
+                                Imagen Requerida.
+                            </p>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="mb-3">
+                        <label for="formFileSm" class="form-label">Imagen Banner 4</label>
+                        <!--formControlName pide banner requerida-->
+                        <input class="form-control form-control-sm" id="banner4PersAgregar" type="file"
+                            formControlName="banner3"
+                            [ngClass]="{'is-invalid': Banner3.errors && Banner3.touched, 'is-valid': !Banner3.errors && Banner3.touched}"
+                            (change)="uploadImage($event)" readonly>
+                        <!--formulario reactivo-->
+                        <div *ngIf="Banner3.errors && Banner3.touched">
+                            <p *ngIf="Banner3.hasError('required')" class="text-danger">
+                                Imagen Requerida.
+                            </p>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="mb-3">
+                        <label for="formFileSm" class="form-label">Foto Perfil</label>
+                        <!--formControlName pide foto_perfil requerida-->
+                        <input class="form-control form-control-sm" id="foto_perfilPersAgregar" type="file"
+                            formControlName="foto_perfil"
+                            [ngClass]="{'is-invalid': Foto_perfil.errors && Foto_perfil.touched, 'is-valid': !Foto_perfil.errors && Foto_perfil.touched}"
+                            (change)="uploadImage($event)" readonly>
+                        <!--formulario reactivo-->
+                        <div *ngIf="Foto_perfil.errors && Foto_perfil.touched">
+                            <p *ngIf="Foto_perfil.hasError('required')" class="text-danger">
+                                Imagen Requerida.
+                            </p>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="mb-3">
+                        <label for="formFileSm" class="form-label">Titulo</label>
+                        <!--formControlName pide titulo requerido y placeholder pide ingrese puesto-->
+                        <input class="form-control form-control-sm" id="tituloPersAgregar" type="text"
+                            formControlName="titulo" placeholder="Ingrese Titulo......"
+                            [ngClass]="{'is-invalid': Titulo.errors && Titulo.touched, 'is-valid': !Titulo.errors && Titulo.touched}"
+                            readonly>
+                        <!--formulario reactivo-->
+                        <div *ngIf="Titulo.errors && Titulo.touched">
+                            <p *ngIf="Titulo.hasError('required')" class="text-danger">
+                                Titulo Requerido.
+                            </p>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="mb-3">
+                        <label for="formFileSm" class="form-label">Ubicacion</label>
+                        <!--formControlName pide Ubicacion requerido y placeholder pide ingrese puesto-->
+                        <input class="form-control form-control-sm" id="ubicacionPersAgregar" type="text"
+                            formControlName="ubicacion" placeholder="Ingrese Ubicacion......"
+                            [ngClass]="{'is-invalid': Ubicacion.errors && Ubicacion.touched, 'is-valid': !Ubicacion.errors && Ubicacion.touched}"
+                            readonly>
+                        <!--formulario reactivo-->
+                        <div *ngIf="Ubicacion.errors && Ubicacion.touched">
+                            <p *ngIf="Ubicacion.hasError('required')" class="text-danger">
+                                Ubicacion Requerida.
+                            </p>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="mb-3">
+                        <label for="formFileSm" class="form-label">Correo</label>
+                        <!--formControlName pide Ubicacion requerido y placeholder pide ingrese puesto-->
+                        <input class="form-control form-control-sm" id="correoPersAgregar" type="text"
+                            formControlName="correo" placeholder="Ingrese Correo......"
+                            [ngClass]="{'is-invalid': Correo.errors && Correo.touched, 'is-valid': !Correo.errors && Correo.touched}"
+                            readonly>
+                        <!--formulario reactivo-->
+                        <div *ngIf="Correo.errors && Correo.touched">
+                            <p *ngIf="Correo.hasError('required')" class="text-danger">
+                                Em@il Requerido.
+                            </p>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="mb-3">
+                        <label for="formFileSm" class="form-label">Contraseña</label>
+                        <!--formControlName pide Ubicacion requerido y placeholder pide ingrese puesto-->
+                        <input class="form-control form-control-sm" id="formFileSm" type="password"
+                            formControlName="contrasenia" placeholder="Ingrese Contraseña......"
+                            [ngClass]="{'is-invalid': Contrasenia.errors && Contrasenia.touched, 'is-valid': !Contrasenia.errors && Contrasenia.touched}"
+                            autocomplete="on" readonly>
+                            <p *ngIf="Contrasenia?.hasError('minlength')" class="text-danger">
+                                Debe ingresar minimo 8 caracteres
+                            </p>
+                        <!--formulario reactivo-->
+                        <div *ngIf="Contrasenia.errors && Contrasenia.touched">
+                            <p *ngIf="Contrasenia.hasError('required')" class="text-danger">
+                                Contraseña Requerida.
+                            </p>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="mb-3">
+                        <label for="formFileSm" class="form-label">Acerca de Mi</label>
+                        <!--formControlName pide Acerca de Mi requerido y placeholder pide ingrese Descripcion-->
+                        <textarea class="form-control" name="comment" id="comment" rows="4"
+                            placeholder="Ingrese Descripcion......" formControlName="acerca_de"
+                            [ngClass]="{'is-invalid': Acerca_de.errors && Acerca_de.touched, 'is-valid': !Acerca_de.errors && Acerca_de.touched}"
+                            readonly></textarea>
+                        <div *ngIf="Acerca_de.errors && Acerca_de.touched">
+                            <p *ngIf="Acerca_de.hasError('required')" class="text-danger">
+                                descripcion Requerida.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-ligth" (click)="limpiar()">Limpiar</button>
+                        <button type="submit"
+                            [disabled]="Nombre?.hasError('required') || Apellido?.hasError('required') || Banner?.hasError('required') || Banner1?.hasError('required') || Banner2?.hasError('required') || Banner3?.hasError('required') || Titulo?.hasError('required') || Ubicacion?.hasError('required') || Acerca_de?.hasError('required')"
+                            data-bs-dismiss="modal" class="btn btn-primary">Aceptar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-editar-persona></app-editar-persona>

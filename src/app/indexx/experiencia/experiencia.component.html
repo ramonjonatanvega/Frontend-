@@ -1,0 +1,34 @@
+<!-- EXPERIENCIA-->
+<section id="experiencia" class="experiencia">
+  <div class="card mat-card ">
+    <div class="container" id="experiencia">
+      <div class="tituloseccion">
+        <h3 class="text-center">Experiencia</h3>
+      </div>
+    </div>
+    
+    
+    <br>
+    
+    
+    <div class="row" *ngFor="let experiencia of experiencias; index as i">
+      <div class="col-sm-2 text-center"><img src={{experiencia.logoEmpresa}} class="rounded-circle" id="logosexp"
+          alt="Logo El Don" width="80rem">
+        <p>{{experiencia.fechaInicio}} / {{experiencia.fechaFin}}</p>
+      </div>
+      <div class="col-sm-5"><br>
+        <h5 class="text-center"> <strong><u>{{experiencia.nombreEmpresa}}</u></strong></h5>
+        <br>
+        <h6 class="text-center">
+          <i>{{experiencia.puesto}}</i>
+        </h6>
+      </div>
+      <div class="col-sm-5">
+        <br>
+        <p>{{experiencia.descripcion}}</p>
+      </div>
+      <hr>
+    </div>
+    <br>
+  </div>
+</section>

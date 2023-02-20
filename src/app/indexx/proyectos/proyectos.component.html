@@ -1,0 +1,28 @@
+<!--proyectos-->
+<section id="proyectos" class="proyectos">
+  <div class="card mat-card ">
+    <div class="proyectos">
+      <div>
+        <h3 class="text-center">Proyectos</h3>
+      </div>
+      <!-- cards de los proyectos -->
+      <div class="container-fluid">
+        <div class="contenedor-secundario row g-5 mt-2 me-5 ms-5">
+          <div *ngFor="let proyecto of proyectos" class="col-12 col-md-6 col-lg-4">
+            <div class="col">
+              <div class="card">
+                <img src={{proyecto.imagen}} class="card-img-top " alt="...">
+                <div class="card-body ">
+                  <h5 class="card-title text-center"><i>{{proyecto.nombre}}</i></h5 >
+                  <h6 class="text-center">{{proyecto.fecha}}</h6>
+                  <p class="card-text text-center "><i>{{proyecto.descripcion}}</i></p>
+                  <a href={{proyecto.url}} target="_blank"><button type="button" class="btn">Ver Proyecto</button></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

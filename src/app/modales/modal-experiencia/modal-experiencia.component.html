@@ -1,0 +1,140 @@
+<div class="modal fade" id="modal-agregar-experiencia" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered justify-content-center">
+        <div class="modal-content text-white text-center rounded-4">
+            <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLabelAgregarExperiencia">Agregar experiencia laboral</h3>
+                <button type="button" class="btn-close bg-white rounded-circle mb-4" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+            <!-- boton PEN-->
+
+            <div class="col-1">
+                <li type="button" class="list-group-item mt-4
+                              mb-4 itemPenColor" data-bs-toggle="modal" data-bs-target="#experienciaModalpen"> <i
+                        class="fa-sharp fa-solid fa-pen"></i></li>
+            </div>
+
+
+            <div class="modal-body">
+                <form [formGroup]="experienForm" (ngSubmit)="onCreate()">
+                    <div class="mb-3-sm ">
+                        <label for="puestoTrabajo" class="form-label">Nombre Empresa</label>
+                        <input type="text" class="form-control" id="nombreEmpresaExpAgregar" name="nombreEmpresa" required
+                            formControlName="nombreEmpresa" placeholder="Ingrese Nombre......"
+                            [ngClass]="{'is-invalid': NombreEmpresa.errors && NombreEmpresa.touched, 'is-valid': !NombreEmpresa.errors && NombreEmpresa.touched}">
+                        <!--formulario reactivo-->
+                        <div *ngIf="NombreEmpresa.errors && NombreEmpresa.touched">
+                            <p *ngIf="NombreEmpresa.hasError('required')" class="text-danger">
+                                El Nombre es requerido.
+                            </p>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="mb-3">
+                        <label for="imagenExp" class="form-label">Logo de Empresa</label>
+                        <!--formControlName Pide imagen requerida-->
+                        <input type="file" class="form-control" id="imagenExp" name="logoEmpresa"
+                            formControlName="logoEmpresa"
+                            [ngClass]="{'is-invalid': LogoEmpresa.errors && LogoEmpresa.touched, 'is-valid': !LogoEmpresa.errors && LogoEmpresa.touched}"
+                            (change)="uploadImage($event)">
+                        <!--formulario reactivo-->
+                        <div *ngIf="LogoEmpresa.errors && LogoEmpresa.touched">
+                            <p *ngIf="LogoEmpresa.hasError('required')" class="text-danger">
+                                El Logo es requerido.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="imagen">
+                        <img [src]="imagenesService.url" width="200px">
+                    </div>
+
+                    <br>
+
+                    <div class="mb-3-sm ">
+                        <label for="puestoTrabajo" class="form-label">Puesto</label>
+                        <!--formControlName pide puesto requerida y placeholder pide ingrese puesto-->
+                        <input type="text" class="form-control" id="puestoTrabajo" name="puesto" required
+                            formControlName="puesto" placeholder="Ingrese Puesto......"
+                            [ngClass]="{'is-invalid': Puesto.errors && Puesto.touched, 'is-valid': !Puesto.errors && Puesto.touched}">
+                        <!--formulario reactivo-->
+                        <div *ngIf="Puesto.errors && Puesto.touched">
+                            <p *ngIf="Puesto.hasError('required')" class="text-danger">
+                                El Puesto es requerido.
+                            </p>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="mb-3">
+                        <label for="anioTrabajo">Fecha Inicio<small></small></label>
+                        <div class="calendario">
+                            <input type="date" class="form-control" id="inicioExpAgregar" name="fechaInicio"
+                                formControlName="fechaInicio"
+                                [ngClass]="{'is-invalid': FechaInicio.errors && FechaInicio.touched, 'is-valid': !FechaInicio.errors && FechaInicio.touched}">
+                            <!--formulario reactivo-->
+                            <div *ngIf="FechaInicio.errors && FechaInicio.touched">
+                                <p *ngIf="FechaInicio.hasError('required')" class="text-danger">
+                                    Fecha Requerida.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="row">
+                            <label for="fin">Fecha Fin<small></small></label>
+                            <div class="calendario">
+                                <input type="date" class="form-control" id="finExpAgregar" name="fechaFin"
+                                    formControlName="fechaFin"
+                                    [ngClass]="{'is-invalid': FechaFin.errors && FechaFin.touched, 'is-valid': !FechaFin.errors && FechaFin.touched}">
+                                <!--formulario reactivo-->
+                                <div *ngIf="FechaFin.errors && FechaFin.touched">
+                                    <p *ngIf="FechaFin.hasError('required')" class="text-danger">
+                                        Fecha Requerida.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-check form-switch">
+                        <input type="checkbox" role="switch" value="" class="form-check-input" name="esTrabajoActual"
+                            formControlName="esTrabajoActual" id="esTrabajoActualExpAgregar">
+                        <label class="form-check-label" for="flexSwitchCheckDefault">Actualidad</label>
+                    </div>
+
+                    <br>
+
+                    <div class="mb-3">
+                        <label for="descripcion" class="form-label">Descripcion</label>
+                        <!--formControlName pide descripcion requerida y placeholder pide ingrese Descripcion-->
+                        <textarea rows="5" type="text" class="form-control" id="descripcionExperiencia" name="descripcion"
+                            placeholder="Ingrese Descripcion......" formControlName="descripcion" required
+                            [ngClass]="{'is-invalid': Descripcion.errors && Descripcion.touched, 'is-valid': !Descripcion.errors && Descripcion.touched}"></textarea>
+                        <div *ngIf="Descripcion.errors && Descripcion.touched">
+                            <p *ngIf="Descripcion.hasError('required')" class="text-danger">
+                                La descripcion es requerida.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-ligth" (click)="limpiar()">Limpiar</button>
+                        <button type="submit"
+                            [disabled]="NombreEmpresa?.hasError('required') || LogoEmpresa?.hasError('required') || Puesto?.hasError('required') || Descripcion?.hasError('required') || FechaInicio?.hasError('required') || FechaFin?.hasError('required')"
+                            data-bs-dismiss="modal" class="btn btn-primary">Aceptar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+<app-editar-experiencia></app-editar-experiencia>

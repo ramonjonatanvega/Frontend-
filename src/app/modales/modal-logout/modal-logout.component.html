@@ -1,0 +1,22 @@
+<!------------- MODAL------------->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered justify-content-center">
+        <div class="modal-content rounded-4 p-1">
+            <div class="modal-header">
+                <h1 class="modal-title text-light" id="exampleModalLabelCerrarSesion">Cerrar Sesión</h1>
+                <button type="button" class="btn-close bg-white rounded-circle" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <form (ngSubmit)="onLogOut()" class="row justify-content-center mb-4">
+                    
+
+                    <div class="modal-footer mt-4 justify-content-center">
+                        <button type="submit" class="btn text-center" data-bs-dismiss="modal">Cerrar Sesion</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

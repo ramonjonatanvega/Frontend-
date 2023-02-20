@@ -1,0 +1,9 @@
+    /*estilos internos dashboard*/
+    section.dashboard, section.panel{
+        margin-top:5.5rem;
+        background-color: #8aa49b;
+            background-size: 1rem ;
+            background-repeat: no-repeat;
+            min-height: 35rem;
+            
+        }

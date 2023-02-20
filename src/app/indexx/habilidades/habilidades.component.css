@@ -1,0 +1,9 @@
+/*habilidades-colores letras*/
+div#habilidades{
+    text-shadow:0rem 0.125rem 1rem; 
+}
+/*efecto hover hard soft& skills(habilidades*/
+.progress:hover{
+    transition: transform 0.3s ease-in-out;
+    transform: scale(1.02);    
+}

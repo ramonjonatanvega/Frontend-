@@ -1,0 +1,27 @@
+<!-- EDUCACION-->
+<section id="educacion" class="educacion">
+  <div class="card mat-card ">
+    <div class="container-fluid" id="educacion">
+      <h3 class="text-center">
+        Educacion
+      </h3>
+    </div>
+    <div class="row" *ngFor="let educacion of educaciones">
+      <div class="col-sm-2 text-center">
+        <img src={{educacion.logoInstitucion}} class="rounded-circle " id="logoseducacion" alt="Logo-ISPC"
+          width="75rem">
+        <p>{{educacion.fechaInicio}} / {{educacion.fechaFin}}</p>
+      </div>      
+      <div class="col-sm-8"><br>
+        <h5 class="text-center" id="titulosed"><strong><u>{{educacion.nombreInstitucion}} </u></strong></h5>
+        <br>
+        <h6 class="text-center">
+          <i>{{educacion.titulo}} </i>
+        </h6>
+      </div>
+      <div class="col-sm-2"></div>
+      <hr>
+    </div>
+    <br>
+  </div>
+</section>

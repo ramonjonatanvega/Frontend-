@@ -1,0 +1,84 @@
+#habilidadModalpen{
+    background-color: #4e12262a;
+    backdrop-filter: blur(0.75rem) saturate(90%) brightness(120%);
+    --bs-modal-width: 37.5rem;
+    --bs-modal-padding: 1rem;
+}
+
+.modal-header{
+    border:none;
+} 
+
+.btn-close{
+    font-size: 0.938rem;
+}
+
+.btn-close:focus{
+    border-style:none;
+    box-shadow: none;
+}
+
+.modal-content{
+    background: #89cdb76b;
+    backdrop-filter: blur(0.938rem);
+    box-shadow: 0 0 1.875rem #69666600;
+}
+
+.modal-title{
+    font-size: 1.75rem;
+}
+
+.modal-body{
+    font-size: 1.25rem;
+}
+
+.form-control{
+    font-size: 1.125rem;
+}
+
+.modal-footer{
+    border:none;
+}
+
+.btn{
+    background: #89cdb76b;
+    color: #194abd;
+    border-radius: 2.5rem;
+    border: none;
+    padding: 0.625rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+    width: 50%;
+}
+
+.btn:hover{
+    background: #194abd;
+    color: #ffffff;
+    transform: scale(1.05);
+    transition: 0.5s;
+}
+
+@media(max-width: 48rem){
+    .modal-content{
+        margin: 2.188rem;
+    }
+
+    .modal-title{
+        font-size: 1.563rem;
+    }
+
+    /*aca va lo del boton close*/
+    .btn-close{
+        font-size: 0.625rem;
+        margin-top: -0.625rem;
+    }
+    
+    .form-control{
+        font-size: 1.125rem;
+    }
+
+    .btn{
+        font-size: 0.938rem;
+        width: 40%;
+    }
+}

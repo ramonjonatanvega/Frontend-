@@ -1,0 +1,50 @@
+<!------------- MODAL------------->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="false">
+  <div class="modal-dialog modal-dialog-centered justify-content-center">
+    <div class="modal-content rounded-4 p-1">
+      <div class="modal-header">
+        <h1 class="modal-title text-light" id="exampleModalLabel">Iniciar Sesión</h1>
+        <button type="button" class="btn-close bg-white rounded-circle" data-bs-dismiss="modal"
+          aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <form [formGroup]="loginForm" (ngSubmit)="onEnviar($event)" class="row justify-content-center mb-4">
+          <div class="col-sm-10">
+            <div>
+              <label for="user"></label>
+              <input class="form-control text-center mb-2" type="text" placeholder="Ingrese su usuario" id="user"
+                name="user" formControlName="correo">
+            </div>
+
+            <div *ngIf="Correo?.errors && Correo?.touched">
+              <div *ngIf="Correo?.hasError('required')" class="alert alert-danger" role="alert">
+                Debe ingresar su nombre de usuario
+              </div>
+            </div>
+
+            <div>
+              <label for="userPassword"></label>
+              <input class="form-control text-center mb-2" type="password" id="inputPassword"
+                placeholder="Ingrese su clave" id="userPassword" name="userPassword" formControlName="contrasenia" autocomplete="on">
+              <p *ngIf="Contrasenia?.hasError('minlength')" class="text-danger">
+                Debe ingresar minimo 8 caracteres
+              </p>
+            </div>
+            <div *ngIf="Contrasenia?.errors && Contrasenia?.touched">
+              <p *ngIf="Contrasenia?.hasError('required')" class="alert alert-danger" role="alert">
+                Debe ingresar la contraseña
+              </p>
+            </div>
+          
+          </div>
+
+          <div class="modal-footer mt-4 justify-content-center">
+            <button type="submit" [disabled]="Correo?.hasError('required') || Contrasenia?.hasError('required')"
+              class="btn text-center" data-bs-dismiss="modal">Ingresar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
