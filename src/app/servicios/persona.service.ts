@@ -11,8 +11,12 @@ export class PersonaService {
     throw new Error('Method not implemented.');
   }
 
-  URL = 'http://localhost:8080/persona/'
+  //URL = 'http://localhost:8080/persona/'
+  URL = 'https://portfolio-jonatanvega.onrender.com/persona/'
   constructor(private httpClient: HttpClient) { }
+  
+
+
   
   public lista(): Observable<Persona[]>{
     return this.httpClient.get<Persona[]>(this.URL + `lista`);

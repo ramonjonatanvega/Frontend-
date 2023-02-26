@@ -8,7 +8,8 @@ import { map } from 'rxjs/operators';
 })
 export class AutenticacionService {
   
-  url="http://localhost:8080/persona/login";
+  //url="http://localhost:8080/persona/login";
+  url="https://portfolio-jonatanvega.onrender.com/persona/login";
   currentUserSubject: BehaviorSubject<any>;
   
   
