@@ -8,11 +8,9 @@ import { Educacion } from '../model/educacion';
 })
 export class EducacionService {
 
-  //url= 'http://localhost:8080/educacion/'
-  url= 'https://portfolio-jonatanvega.onrender.com/educacion/'
-
+  url= 'http://localhost:8080/educacion/'
   constructor(private httpClient:HttpClient) { }
-  
+
 
    /* Propiedad de tipo experiencia. Lo utilizo para que los inputs, del modal editar, contengan los valores de la
   card seleccionada.

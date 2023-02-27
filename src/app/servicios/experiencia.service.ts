@@ -9,12 +9,10 @@ import { Experiencia } from '../model/experiencia';
 })
 export class ExperienciaService {
 
- //URL = 'http://localhost:8080/experiencia/'
- URL = 'https://portfolio-jonatanvega.onrender.com/experiencia/'
+  URL = 'http://localhost:8080/experiencia/'
   constructor(private httpClient: HttpClient) { }
 
 
- 
   /* Propiedad de tipo experiencia. Lo utilizo para que los inputs, del modal editar, contengan los valores de la
   card seleccionada.
   */
