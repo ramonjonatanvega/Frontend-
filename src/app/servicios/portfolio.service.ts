@@ -9,9 +9,11 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class PortfolioService {
-  url:string="http://localhost:8080/persona/"
+  //url:string="http://localhost:8080/persona/"
+  url:string="https://portfolio-jonatanvega.onrender.com/persona/"
   constructor(private http:HttpClient) { }
 
+  
   //Metodo observable que obtiene los datos
   obtenerDatos():Observable<any> {
     //Se llama al JSON con su path -ruta-, o bien, en su lugar se puede poner una URL para traer datos de un JSON online

@@ -9,5 +9,6 @@ export const environment = {
     messagingSenderId: '632345410675',
     measurementId: 'G-WNS3M0ML36',
   },
-  production: true
+  production: true,
+  apiURL:"https://portfolio-jonatanvega.onrender.com/",
 };

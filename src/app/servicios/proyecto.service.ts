@@ -8,10 +8,12 @@ import { Proyecto } from '../model/proyecto';
 })
 export class ProyectoService {
 
-  url = 'http://localhost:8080/proyecto/'
+ //url = 'http://localhost:8080/proyecto/'
+  url = 'https://portfolio-jonatanvega.onrender.com/proyecto/'
   constructor(private httpClient: HttpClient) { }
 
 
+  
   /* Propiedad de tipo proyecto. Lo utilizo para que los inputs, del modal editar, contengan los valores de la
   card seleccionada.
   */

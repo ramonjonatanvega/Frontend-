@@ -10,11 +10,12 @@ export class HabilidadService {
 
  
 
-    url= 'http://localhost:8080/skill/'
+    //url= 'http://localhost:8080/skill/'
+    url= 'https://portfolio-jonatanvega.onrender.com/skill/'
   constructor(private httpClient:HttpClient) { }
 
 
-
+  
   /* A partir de acá, comienzan los métodos responsables de comunicarse con el backend y así, lograr traer
   crear, actualizar o eliminar experiencias.
   */
