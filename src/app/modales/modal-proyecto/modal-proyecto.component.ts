@@ -26,6 +26,7 @@ export class ModalProyectoComponent implements OnInit {
 
     //creamos el grupo de controles para el formulario
     this.proyecForm = this.formBuilder.group({
+      id:[''],
       nombre: ['', [Validators.required]],
       imagen: ['', [Validators.required,]],
       fecha: ['', [Validators.required]],

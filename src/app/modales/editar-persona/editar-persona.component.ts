@@ -22,7 +22,7 @@ export class EditarPersonaComponent implements OnInit {
     //Creamos el grupo de controles para el formulario 
     this.persoForm = this.formBuilder.group({
       //objetos definidos(declarados) para el formulario reactivo  persoForm 
-      id: ['1'],
+      id: [1],
       nombre: [''],
       apellido: [''],
       banner: [''],

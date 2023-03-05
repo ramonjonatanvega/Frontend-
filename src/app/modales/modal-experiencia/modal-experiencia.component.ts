@@ -28,6 +28,7 @@ export class ModalExperienciaComponent implements OnInit {
 
     //Se crea el formulario, con sus propiedades y validaciones.
     this.experienForm = this.formBuilder.group({
+      id:[''],
       nombreEmpresa: ['', [Validators.required]],
       logoEmpresa: ['', [Validators.required]],
       puesto: ['', [Validators.required]],

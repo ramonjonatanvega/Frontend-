@@ -35,7 +35,7 @@ export class EditarExperienciaComponent implements OnInit {
       fechaInicio: [''],
       fechaFin: [''],
       esTrabajoActual: [''],
-      personaId: [],
+      personaId: [1],
     })
 
   }

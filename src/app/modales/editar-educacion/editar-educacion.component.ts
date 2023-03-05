@@ -33,7 +33,7 @@ export class EditarEducacionComponent implements OnInit {
       fechaInicio: [''],
       fechaFin: [''],
       esEstudioActual: [''],
-      personaid: [],
+      personaid: [1],
     })
   }
 

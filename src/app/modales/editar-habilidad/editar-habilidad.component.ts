@@ -22,7 +22,7 @@ export class EditarHabilidadComponent implements OnInit {
       id: [''],
       nombreHabilidad: [''],
       porcentaje: [''],
-      personaid: [],
+      personaid: [1],
     })
 
   }

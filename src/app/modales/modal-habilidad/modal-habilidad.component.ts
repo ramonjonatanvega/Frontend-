@@ -21,6 +21,7 @@ export class ModalHabilidadComponent implements OnInit {
 
     //Se crea el formulario, con sus propiedades y validaciones.
     this.habiliForm = this.formBuilder.group({
+      id:[''],
       nombreHabilidad: ['', [Validators.required]],
       porcentaje: ['', [Validators.required, Validators.min(0), Validators.max(100)]],
       personaid: [1],

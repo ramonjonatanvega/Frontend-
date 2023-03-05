@@ -30,7 +30,7 @@ export class EditarProyectoComponent implements OnInit {
       fecha: [''],
       descripcion: [''],
       url: [''],
-      personaid: [],
+      personaid: [1],
     })
 
   }
