@@ -3,7 +3,7 @@ import { Habilidad } from 'src/app/model/habilidad';
 import { HabilidadService } from 'src/app/servicios/habilidad.service';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 
- 
+
 
 @Component({
   selector: 'app-habilidades',
@@ -11,17 +11,17 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
   styleUrls: ['./habilidades.component.css']
 })
 export class HabilidadesComponent implements OnInit {
-  habilidades: Habilidad[]=[]; //se llama al modelo que es un array
+  habilidades: Habilidad[] = []; //se llama al modelo que es un array
 
 
   constructor(private serviHabilidad: HabilidadService) { }
 
   ngOnInit(): void {
     this.cargarHabilidad();
-    
+
   }
-  cargarHabilidad():void{
-    this.serviHabilidad.lista().subscribe(data => {this.habilidades=data});
+  cargarHabilidad(): void {
+    this.serviHabilidad.lista().subscribe(data => { this.habilidades = data });
   }
 
   /*delete(id:number){
@@ -35,5 +35,5 @@ export class HabilidadesComponent implements OnInit {
         })
     }}*/
 
-    
+
 }

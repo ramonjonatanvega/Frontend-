@@ -69,10 +69,6 @@ export class EditarEducacionComponent implements OnInit {
   }
 
 
-  /*
-   Acá se obtiene la propiedad de imgCurso y valor del modal ubicado en el servicio de educación y se introduce la url obtenida de la imagen, 
-   proveniente de Firebase y se la manda a la base de datos, junto con los demás valores del formulario.
-   */
   guardar(): void {
     this.serviEducacion.edit(this.educaForm.value).subscribe(data => {
       alert("Nuevo Curso editado");
@@ -98,7 +94,7 @@ export class EditarEducacionComponent implements OnInit {
       })
   }
 
-  //Esta función obtiene la imagen del input de tipo File, para, posteriormente, mandarla a Firebase.
+  //Esta función obtiene la imagen del input de tipo File, para, posteriormente, mandarla a Firebase.ojo este metodo no esta siendo usado en editar
   uploadImage($event: any) {
     const name = 'Educacion';
     this.imagenesService.uploadImage($event, name);

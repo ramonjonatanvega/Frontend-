@@ -1,7 +1,7 @@
 /*barra redes sociales y login*/
-.navbar.navbar-expand-lg.bg-ligth{
-    background: #c6d3d399 ;
-    }
+.navbar.navbar-expand-lg.bg-ligth {
+    background: #c6d3d399;
+}
 
 
 /*color negro redes*/
@@ -9,65 +9,64 @@ i.fa-brands.fa-square-facebook.fa-2xl,
 i.fa-solid.fa-download.fa-2xl,
 i.fa-brands.fa-instagram.fa-2xl,
 i.fa-brands.fa-square-github.fa-2xl,
-i.fa-brands.fa-square-twitter.fa-2xl
-{
-    color: #000000;  
+i.fa-brands.fa-square-twitter.fa-2xl {
+    color: #000000;
 }
 
 /*efecto hover logo argentina programa*/
-.navbar-brand:hover{
+.navbar-brand:hover {
     transition: transform 0.3s ease-in-out;
     transform: scale(1.05);
 }
 
 /*efectos hover redes*/
-i.fa-solid.fa-download.fa-2xl:hover{
+i.fa-solid.fa-download.fa-2xl:hover {
     color: #0000ff;
     transition: transform 0.3s ease-in-out;
-    transform: scale(1.40); 
-      
+    transform: scale(1.40);
+
 }
 
 i.fa-brands.fa-square-facebook.fa-2xl:hover {
-color: #0000ff;
-transition: transform 0.3s ease-in-out;
-transform: scale(1.40);
+    color: #0000ff;
+    transition: transform 0.3s ease-in-out;
+    transform: scale(1.40);
 }
 
 i.fa-brands.fa-instagram.fa-2xl:hover {
-  color: #c2046d; 
-  transition: transform 0.3s ease-in-out;
-transform: scale(1.40); 
+    color: #c2046d;
+    transition: transform 0.3s ease-in-out;
+    transform: scale(1.40);
 }
 
 i.fa-brands.fa-square-github.fa-2xl:hover {
     color: #000000;
     transition: transform 0.3s ease-in-out;
-transform: scale(1.40);
+    transform: scale(1.40);
 }
 
-i.fa-brands.fa-square-twitter.fa-2xl:hover{
+i.fa-brands.fa-square-twitter.fa-2xl:hover {
     color: #00acee;
     transition: transform 0.3s ease-in-out;
-transform: scale(1.40);
+    transform: scale(1.40);
 }
 
-i.fa-solid.fa-user-lock.fa-2xl:hover{
+i.fa-solid.fa-user-lock.fa-2xl:hover {
     color: #2514bbda;
     transition: transform 0.3s ease-in-out;
     transform: scale(1.40);
 }
 
-i.fa-solid.fa-user.fa-2xl:hover{
+i.fa-solid.fa-user.fa-2xl:hover {
     color: #2514bbda;
     transition: transform 0.3s ease-in-out;
-    transform: scale(1.40); 
-    
+    transform: scale(1.40);
+
 }
 
 /*redes sociales*/
-.list-group{
-    --bs-list-group-bg:transparent;
+.list-group {
+    --bs-list-group-bg: transparent;
     --bs-list-group-border-width: 0;
-   
+
 }

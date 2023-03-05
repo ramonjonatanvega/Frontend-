@@ -26,7 +26,8 @@
             <div>
               <label for="userPassword"></label>
               <input class="form-control text-center mb-2" type="password" id="inputPassword"
-                placeholder="Ingrese su clave" id="userPassword" name="userPassword" formControlName="contrasenia" autocomplete="on">
+                placeholder="Ingrese su clave" id="userPassword" name="userPassword" formControlName="contrasenia"
+                autocomplete="on">
               <p *ngIf="Contrasenia?.hasError('minlength')" class="text-danger">
                 Debe ingresar minimo 8 caracteres
               </p>
@@ -36,7 +37,7 @@
                 Debe ingresar la contraseña
               </p>
             </div>
-          
+
           </div>
 
           <div class="modal-footer mt-4 justify-content-center">

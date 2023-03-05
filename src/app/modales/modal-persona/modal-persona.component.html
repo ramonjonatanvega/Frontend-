@@ -194,9 +194,9 @@
                             formControlName="contrasenia" placeholder="Ingrese Contraseña......"
                             [ngClass]="{'is-invalid': Contrasenia.errors && Contrasenia.touched, 'is-valid': !Contrasenia.errors && Contrasenia.touched}"
                             autocomplete="on" readonly>
-                            <p *ngIf="Contrasenia?.hasError('minlength')" class="text-danger">
-                                Debe ingresar minimo 8 caracteres
-                            </p>
+                        <p *ngIf="Contrasenia?.hasError('minlength')" class="text-danger">
+                            Debe ingresar minimo 8 caracteres
+                        </p>
                         <!--formulario reactivo-->
                         <div *ngIf="Contrasenia.errors && Contrasenia.touched">
                             <p *ngIf="Contrasenia.hasError('required')" class="text-danger">

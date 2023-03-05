@@ -1,12 +1,13 @@
 /*estilos internos dashboard*/
-section.dashboard, section.panel{
-    margin-top:5.5rem;
+section.dashboard,
+section.panel {
+    margin-top: 5.5rem;
     background-color: #8aa49b;
-        background-size: 100% ;
-        background-repeat: no-repeat;
-        min-height: 100vh;
-    }
-    .navbar.navbar-expand-lg.bg-ligth{
-        background: #c6d3d399 ;
-        }
-        
+    background-size: 100%;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+.navbar.navbar-expand-lg.bg-ligth {
+    background: #c6d3d399;
+}

@@ -36,7 +36,8 @@
                     <div class="mb-3">
                         <label for="image" class="form-label">Imagen</label>
                         <!--formControlName Pide imagen requerida-->
-                        <input type="file" class="form-control text-center" id="image" name="imagen" formControlName="imagen"
+                        <input type="file" class="form-control text-center" id="image" name="imagen"
+                            formControlName="imagen"
                             [ngClass]="{'is-invalid': Imagen.errors && Imagen.touched, 'is-valid': !Imagen.errors && Imagen.touched}"
                             (change)="uploadImage($event)">
                         <!--formulario reactivo-->
@@ -57,7 +58,8 @@
                     <div class="mb-3">
                         <label for="fech">Fecha del Proyecto<small></small></label>
                         <div class="calendario">
-                            <input type="date" class="form-control text-center" id="fech" name="fecha" formControlName="fecha"
+                            <input type="date" class="form-control text-center" id="fech" name="fecha"
+                                formControlName="fecha"
                                 [ngClass]="{'is-invalid': Fecha.errors && Fecha.touched, 'is-valid': !Fecha.errors && Fecha.touched}">
                             <!--formulario reactivo-->
                             <div *ngIf="Fecha.errors && Fecha.touched">
@@ -73,8 +75,8 @@
                     <div class="mb-3-sm ">
                         <label for="urll" class="form-label">Url</label>
                         <!--formControlName pide puesto requerida y placeholder pide ingrese puesto-->
-                        <input type="text" class="form-control text-center" id="urll" name="url" required formControlName="url"
-                            placeholder="Ingrese Url......"
+                        <input type="text" class="form-control text-center" id="urll" name="url" required
+                            formControlName="url" placeholder="Ingrese Url......"
                             [ngClass]="{'is-invalid': Url.errors && Url.touched, 'is-valid': !Url.errors && Url.touched}">
                         <!--formulario reactivo-->
                         <div *ngIf="Url.errors && Url.touched">

@@ -21,7 +21,7 @@ export class ModalHabilidadComponent implements OnInit {
 
     //Se crea el formulario, con sus propiedades y validaciones.
     this.habiliForm = this.formBuilder.group({
-      id:[''],
+      id: [''],
       nombreHabilidad: ['', [Validators.required]],
       porcentaje: ['', [Validators.required, Validators.min(0), Validators.max(100)]],
       personaid: [1],
@@ -31,7 +31,7 @@ export class ModalHabilidadComponent implements OnInit {
 
   ngOnInit(): void { }
 
-  //declarar para los campos
+
   get NombreHabilidad() {
     return this.habiliForm.get("nombreHabilidad");
   }
@@ -42,7 +42,7 @@ export class ModalHabilidadComponent implements OnInit {
 
 
 
-  /*Esta función sirve para mandar los valores del formulario, a la base de datos. Pasando a través del servicio de educación y posteriormente, del back-end.*/
+  /*Esta función sirve para mandar los valores del formulario, a la base de datos. Pasando a través del servicio de habilidad y posteriormente, del back-end.*/
   crearHabilidad(): void {
     this.serviHabilidad.crear(this.habiliForm.value).subscribe(data => {
       alert("Nueva habilidad dura agregada");

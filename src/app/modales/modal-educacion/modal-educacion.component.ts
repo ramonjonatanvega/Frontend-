@@ -12,29 +12,29 @@ import { ImageService } from 'src/app/servicios/image.service';
 export class ModalEducacionComponent implements OnInit {
   //Se inicializa el formulario.
   educaForm: FormGroup;
-  id?:number;
-  nombreInstitucion: string ='';
-  logoInstitucion : string ='';
-  titulo : string = '';
-  fechaInicio: string ='';
-  fechaFin : string = '';
-  esEstudioActual : boolean = false;
-  personaId : number = 1;
+  id?: number;
+  nombreInstitucion: string = '';
+  logoInstitucion: string = '';
+  titulo: string = '';
+  fechaInicio: string = '';
+  fechaFin: string = '';
+  esEstudioActual: boolean = false;
+  personaId: number = 1;
 
   //Se inyectan los servicios que se van a utilizar.
-  constructor(private formBuilder : FormBuilder, private serviEducacion:EducacionService, public imagenesService: ImageService) { 
-   
-     //Se crea el formulario, con sus propiedades y validaciones.
-     this.educaForm=this.formBuilder.group({
-      id:[''],
-      nombreInstitucion:['',[Validators.required]],
-      logoInstitucion:['',[Validators.required]],     
-      titulo:['',[Validators.required]],
-      fechaInicio :['',[Validators.required]],
-      fechaFin :['',[Validators.required]],
-      esEstudioActual :[''],
+  constructor(private formBuilder: FormBuilder, private serviEducacion: EducacionService, public imagenesService: ImageService) {
+
+    //Se crea el formulario, con sus propiedades y validaciones.
+    this.educaForm = this.formBuilder.group({
+      id: [''],
+      nombreInstitucion: ['', [Validators.required]],
+      logoInstitucion: ['', [Validators.required]],
+      titulo: ['', [Validators.required]],
+      fechaInicio: ['', [Validators.required]],
+      fechaFin: ['', [Validators.required]],
+      esEstudioActual: [''],
       personaid: [1],
-   })
+    })
 
   }
 
@@ -68,8 +68,8 @@ export class ModalEducacionComponent implements OnInit {
 
 
   /*Esta función sirve para mandar los valores del formulario, a la base de datos. Pasando a través del servicio de educación y posteriormente, del back-end. */
-  crearNuevoCurso():void {
-    /*Acá se obtiene la propiedad y valor de imgCurso y se introduce la url obtenida de la imagen, proveniente de Firebase y se la manda a la base de datos, junto con los demás valores del formulario.*/
+  crearNuevoCurso(): void {
+    /*Acá se obtiene la propiedad y valor de logoInstitucion y se introduce la url obtenida de la imagen, proveniente de Firebase y se la manda a la base de datos, junto con los demás valores del formulario.*/
     this.educaForm.value.logoInstitucion = this.imagenesService.url;
     this.serviEducacion.crear(this.educaForm.value).subscribe(data => {
       alert("Nuevo Curso agregado");
@@ -81,7 +81,7 @@ export class ModalEducacionComponent implements OnInit {
   }
 
   //esto es para limpiar los campos del formulario
-  limpiar(): void{
+  limpiar(): void {
     this.educaForm.reset();
   }
 

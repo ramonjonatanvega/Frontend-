@@ -9,16 +9,16 @@ import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 })
 export class ModalLogoutComponent implements OnInit {
 
-  constructor(private autenticacionService:AutenticacionService, private ruta:Router) { }
+  constructor(private autenticacionService: AutenticacionService, private ruta: Router) { }
 
   ngOnInit(): void {
   }
 
-  onLogOut(): void{
+  onLogOut(): void {
     this.autenticacionService.logOut()
     this.ruta.navigate(['/index'])
     window.location.reload();
   }
- 
-  
+
+
 }

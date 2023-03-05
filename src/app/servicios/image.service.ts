@@ -18,18 +18,18 @@ export class ImageService {
     const file = $event.target.files[0];
     const imgRef = ref(this.storage, `imagenes/${name}/${file.name}`);
     console.log(imgRef);
-    uploadBytes(imgRef, file).then(response => {this.getImages(file, name)})
-    .catch(error => console.log(error));
+    uploadBytes(imgRef, file).then(response => { this.getImages(file, name) })
+      .catch(error => console.log(error));
 
   }
 
   //Método que trae una determinada imagen, mediante la url.
-  getImages(file: any, name: string){
+  getImages(file: any, name: string) {
     const imagesRef = ref(this.storage, `imagenes/${name}/`);
     list(imagesRef).then(
       async response => {
-        for(let item of response.items) {
-          if(file.name == item.name) {
+        for (let item of response.items) {
+          if (file.name == item.name) {
             this.url = await getDownloadURL(item);
             console.log("la URL es: " + this.url);
           }

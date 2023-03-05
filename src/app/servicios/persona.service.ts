@@ -14,31 +14,39 @@ export class PersonaService {
   //URL = 'http://localhost:8080/persona/'
   URL = 'https://portfolio-jonatanvega.onrender.com/persona/'
   constructor(private httpClient: HttpClient) { }
-  
 
- 
-  public lista(): Observable<Persona[]>{
+  /* A partir de acá, comienzan los métodos responsables de comunicarse con el backend y así, lograr traer
+  crear, actualizar o eliminar persona.
+  */
+
+
+  // trae la lista de Persona del backend
+  public lista(): Observable<Persona[]> {
     return this.httpClient.get<Persona[]>(this.URL + `lista`);
   }
 
-  public detail(id: number):Observable<Persona>{
-  return this.httpClient.get<Persona>(this.URL + `detail/${id}`);
+  //ver persona por id
+  public detail(id: number): Observable<Persona> {
+    return this.httpClient.get<Persona>(this.URL + `detail/${id}`);
   }
 
-  public crear(perso: Persona):Observable<any>{
+  //crear una persona
+  public crear(perso: Persona): Observable<any> {
     return this.httpClient.post<any>(this.URL + `crear`, perso);
-    }
+  }
 
-  public delete(id: number):Observable<any>{
+  //eliminar  persona  
+  public delete(id: number): Observable<any> {
     return this.httpClient.delete<any>(this.URL + `borrar/${id}`);
-    }
+  }
 
-  public edit(perso: Persona):Observable<any>{
+  //editar persona  
+  public edit(perso: Persona): Observable<any> {
     return this.httpClient.put<any>(this.URL + 'update', perso);
-    }
+  }
 
-   updateExp(persona: Persona):Observable<any> {
-    const urlExpId = this.URL + `editar/${persona.id}`;
-    return this.httpClient.put<Persona>(urlExpId, persona);
-    }
+  /* updateExp(persona: Persona): Observable<any> {
+     const urlExpId = this.URL + `editar/${persona.id}`;
+     return this.httpClient.put<Persona>(urlExpId, persona);
+   }*/
 }

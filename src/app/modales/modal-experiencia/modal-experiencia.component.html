@@ -20,8 +20,8 @@
                 <form [formGroup]="experienForm" (ngSubmit)="onCreate()">
                     <div class="mb-3-sm ">
                         <label for="puestoTrabajo" class="form-label">Nombre Empresa</label>
-                        <input type="text" class="form-control" id="nombreEmpresaExpAgregar" name="nombreEmpresa" required
-                            formControlName="nombreEmpresa" placeholder="Ingrese Nombre......"
+                        <input type="text" class="form-control" id="nombreEmpresaExpAgregar" name="nombreEmpresa"
+                            required formControlName="nombreEmpresa" placeholder="Ingrese Nombre......"
                             [ngClass]="{'is-invalid': NombreEmpresa.errors && NombreEmpresa.touched, 'is-valid': !NombreEmpresa.errors && NombreEmpresa.touched}">
                         <!--formulario reactivo-->
                         <div *ngIf="NombreEmpresa.errors && NombreEmpresa.touched">
@@ -113,8 +113,9 @@
                     <div class="mb-3">
                         <label for="descripcion" class="form-label">Descripcion</label>
                         <!--formControlName pide descripcion requerida y placeholder pide ingrese Descripcion-->
-                        <textarea rows="5" type="text" class="form-control" id="descripcionExperiencia" name="descripcion"
-                            placeholder="Ingrese Descripcion......" formControlName="descripcion" required
+                        <textarea rows="5" type="text" class="form-control" id="descripcionExperiencia"
+                            name="descripcion" placeholder="Ingrese Descripcion......" formControlName="descripcion"
+                            required
                             [ngClass]="{'is-invalid': Descripcion.errors && Descripcion.touched, 'is-valid': !Descripcion.errors && Descripcion.touched}"></textarea>
                         <div *ngIf="Descripcion.errors && Descripcion.touched">
                             <p *ngIf="Descripcion.hasError('required')" class="text-danger">

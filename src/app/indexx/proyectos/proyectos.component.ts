@@ -10,17 +10,17 @@ import { ProyectoService } from 'src/app/servicios/proyecto.service';
 export class ProyectosComponent implements OnInit {
   proyectos: any;
 
-  constructor(private serviProyecto:ProyectoService) { }
+  constructor(private serviProyecto: ProyectoService) { }
 
   ngOnInit(): void {
     this.cargarProyecto();
 
   }
 
-  cargarProyecto():void{
+  cargarProyecto(): void {
     this.serviProyecto.lista().subscribe(data => {
-      this.proyectos=data
-    });    
+      this.proyectos = data
+    });
   }
 
 }

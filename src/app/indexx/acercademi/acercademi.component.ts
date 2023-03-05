@@ -9,15 +9,15 @@ import { PersonaService } from 'src/app/servicios/persona.service';
   styleUrls: ['./acercademi.component.css']
 })
 export class AcercademiComponent implements OnInit {
-  personas: Persona[]=[];
-  constructor(public serviPersona:PersonaService) { }
+  personas: Persona[] = [];
+  constructor(public serviPersona: PersonaService) { }
 
   ngOnInit(): void {
-    this.cargarPersona();   
+    this.cargarPersona();
   }
 
-  cargarPersona():void{
-    this.serviPersona.lista().subscribe(data => {this.personas=data});
+  cargarPersona(): void {
+    this.serviPersona.lista().subscribe(data => { this.personas = data });
   }
 
 }

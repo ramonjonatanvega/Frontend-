@@ -1,72 +1,79 @@
 /* You can add global styles to this file, and also import other style files */
-.card.mat-card{
+.card.mat-card {
     border-radius: 2rem;
-        margin: 1.875rem 0.625rem;
-        padding: 0.813rem;
-        border-color:#0ea5dc;
-        width: 83rem auto;
-        box-shadow: 0.125rem  0.125rem 0.25rem 0.625rem #9d0526da;
-        color:#fff;
-        background-color:#000000;      
+    margin: 1.875rem 0.625rem;
+    padding: 0.813rem;
+    border-color: #0ea5dc;
+    width: 83rem auto;
+    box-shadow: 0.125rem 0.125rem 0.25rem 0.625rem #9d0526da;
+    color: #fff;
+    background-color: #000000;
 }
 
 
 /*barra redes sociales y login*/
-.navbar.navbar-expand-lg.bg-ligth{
-    background: #c6d3d399 ;
-    }
-    
-    i.fa-solid.fa-download.fa-2xl:hover{
-        color: #0000ff;
-        transition: transform 0.3s ease-in-out;
-        transform: scale(1.40);
-    }
-    i.fa-brands.fa-square-facebook.fa-2xl:hover {
+.navbar.navbar-expand-lg.bg-ligth {
+    background: #c6d3d399;
+}
+
+i.fa-solid.fa-download.fa-2xl:hover {
     color: #0000ff;
     transition: transform 0.3s ease-in-out;
     transform: scale(1.40);
-    }
-    i.fa-brands.fa-instagram.fa-2xl:hover {
-      color: #c2046d; 
-      transition: transform 0.3s ease-in-out;
-    transform: scale(1.40); 
-    }
-    i.fa-brands.fa-square-github.fa-2xl:hover {
-        color: #000000;
-        transition: transform 0.3s ease-in-out;
-    transform: scale(1.40);
-    }
-    i.fa-brands.fa-square-twitter.fa-2xl:hover{
-        color: #00acee;
-        transition: transform 0.3s ease-in-out;
-    transform: scale(1.40);
-    }
-    i.fa-solid.fa-user-lock.fa-2xl:hover{
-        color: #2514bbda;
-        transition: transform 0.3s ease-in-out;
-        transform: scale(1.40);
-    }
-    i.fa-solid.fa-user.fa-2xl:hover{
-        color: #2514bbda;
-        transition: transform 0.3s ease-in-out;
-        transform: scale(1.40); 
-    }
-    /*color negro redes*/
-    i.fa-brands.fa-square-facebook.fa-2xl,
-    i.fa-solid.fa-download.fa-2xl,
-    i.fa-brands.fa-instagram.fa-2xl,
-    i.fa-brands.fa-square-github.fa-2xl,
-    i.fa-brands.fa-square-twitter.fa-2xl
-    {
-        color: #000000;  
-    }
+}
 
-    /* redes sociales*/
-    .list-group{
-        --bs-list-group-bg:transparent;
-        --bs-list-group-border-width: 0;
-    }
-   
-    hr{
-       border:0rem; border-top: 0.313rem double #f1eaea;
-    }
+i.fa-brands.fa-square-facebook.fa-2xl:hover {
+    color: #0000ff;
+    transition: transform 0.3s ease-in-out;
+    transform: scale(1.40);
+}
+
+i.fa-brands.fa-instagram.fa-2xl:hover {
+    color: #c2046d;
+    transition: transform 0.3s ease-in-out;
+    transform: scale(1.40);
+}
+
+i.fa-brands.fa-square-github.fa-2xl:hover {
+    color: #000000;
+    transition: transform 0.3s ease-in-out;
+    transform: scale(1.40);
+}
+
+i.fa-brands.fa-square-twitter.fa-2xl:hover {
+    color: #00acee;
+    transition: transform 0.3s ease-in-out;
+    transform: scale(1.40);
+}
+
+i.fa-solid.fa-user-lock.fa-2xl:hover {
+    color: #2514bbda;
+    transition: transform 0.3s ease-in-out;
+    transform: scale(1.40);
+}
+
+i.fa-solid.fa-user.fa-2xl:hover {
+    color: #2514bbda;
+    transition: transform 0.3s ease-in-out;
+    transform: scale(1.40);
+}
+
+/*color negro redes*/
+i.fa-brands.fa-square-facebook.fa-2xl,
+i.fa-solid.fa-download.fa-2xl,
+i.fa-brands.fa-instagram.fa-2xl,
+i.fa-brands.fa-square-github.fa-2xl,
+i.fa-brands.fa-square-twitter.fa-2xl {
+    color: #000000;
+}
+
+/* redes sociales*/
+.list-group {
+    --bs-list-group-bg: transparent;
+    --bs-list-group-border-width: 0;
+}
+
+hr {
+    border: 0rem;
+    border-top: 0.313rem double #f1eaea;
+}

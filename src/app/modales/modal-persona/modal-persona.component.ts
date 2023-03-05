@@ -39,7 +39,7 @@ export class ModalPersonaComponent implements OnInit {
       titulo: ['', [Validators.required]],
       ubicacion: ['', [Validators.required]],
       correo: ['', [Validators.required]],
-      contrasenia: ['',[Validators.required, Validators.minLength(8)]],
+      contrasenia: ['', [Validators.required, Validators.minLength(8)]],
       acerca_de: ['', [Validators.required]],
 
 
@@ -49,7 +49,7 @@ export class ModalPersonaComponent implements OnInit {
 
   ngOnInit(): void { }
 
-  
+
 
   get Nombre() {
     return this.persoForm.get("nombre");
@@ -100,13 +100,11 @@ export class ModalPersonaComponent implements OnInit {
     return this.persoForm.get("acerca_de");
   }
 
-  onCrear(): void {
-    /*
-   Acá se obtiene la propiedad y valor de imgCurso y se introduce la url obtenida de la imagen, proveniente de Firebase y se la manda a la base de datos, 
-   junto con los demás valores del formulario.
-   */
 
-    /*Acá se obtiene la propiedad y valor de imgCurso y se introduce la url obtenida de la imagen, proveniente de Firebase y se la manda a la base de datos, junto con los demás valores del formulario.*/
+  /*Esta función sirve para mandar los valores del formulario, a la base de datos. Pasando a través del servicio de persona y posteriormente, del back-end. */
+  onCrear(): void {
+
+    /*Acá se obtiene la propiedad y valor de banner,banner1,banner2,banner3 y se introduce la url obtenida de la imagen, proveniente de Firebase y se la manda a la base de datos, junto con los demás valores del formulario.*/
     this.persoForm.value.banner = this.imagenesService.url;
     this.persoForm.value.banner1 = this.imagenesService.url;
     this.persoForm.value.banner2 = this.imagenesService.url;
@@ -137,7 +135,7 @@ export class ModalPersonaComponent implements OnInit {
     const name = 'Persona';
     this.imagenesService.uploadImage($event, name);
   }
- 
-  
+
+
 }
 

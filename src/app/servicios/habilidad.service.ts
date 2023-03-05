@@ -8,44 +8,47 @@ import { Habilidad } from '../model/habilidad';
 })
 export class HabilidadService {
 
- 
-
-    //url= 'http://localhost:8080/skill/'
-    url= 'https://portfolio-jonatanvega.onrender.com/skill/'
-  constructor(private httpClient:HttpClient) { }
 
 
-  
+  //url= 'http://localhost:8080/skill/'
+  url = 'https://portfolio-jonatanvega.onrender.com/skill/'
+  constructor(private httpClient: HttpClient) { }
+
+
+
   /* A partir de acá, comienzan los métodos responsables de comunicarse con el backend y así, lograr traer
-  crear, actualizar o eliminar experiencias.
+  crear, actualizar o eliminar habilidad.
   */
- public lista(): Observable<Habilidad[]>{
-  return this.httpClient.get<Habilidad[]>(this.url + `lista`);
-}
 
-public listaPer(id: number): Observable<Habilidad[]>{
-  return this.httpClient.get<Habilidad[]>(this.url + `persona/${id}/lista`);
-}
-
-public detail(id: number):Observable<Habilidad>{
-  return this.httpClient.get<Habilidad>(this.url + `detail/${id}`);
+  // trae la lista de habilidad del backend
+  public lista(): Observable<Habilidad[]> {
+    return this.httpClient.get<Habilidad[]>(this.url + `lista`);
   }
 
-public crear(habilidad: Habilidad):Observable<any>{
-  return this.httpClient.post<any>(this.url + `crear`, habilidad);
-}
-
-public edit(habilidad: Habilidad):Observable<any>{
-  return this.httpClient.put<any>(this.url + 'update', habilidad);
-  }
-
-  
-public delete(id: number):Observable<any>{
-  return this.httpClient.delete<any>(this.url + 'borrar/' + id);
-}
-
-/*public edit(experiencia: Experiencia):Observable<any>{
-  return this.httpClient.put<any>(this.url + 'update', experiencia);
+  /*public listaPer(id: number): Observable<Habilidad[]>{
+    return this.httpClient.get<Habilidad[]>(this.url + `persona/${id}/lista`);
   }*/
+
+  //ver habilidad por id 
+  public detail(id: number): Observable<Habilidad> {
+    return this.httpClient.get<Habilidad>(this.url + `detail/${id}`);
+  }
+
+  //crear una habilidad
+  public crear(habilidad: Habilidad): Observable<any> {
+    return this.httpClient.post<any>(this.url + `crear`, habilidad);
+  }
+
+  //modificar una habilidad
+  public edit(habilidad: Habilidad): Observable<any> {
+    return this.httpClient.put<any>(this.url + 'update', habilidad);
+  }
+
+  //eliminar una habilidad
+  public delete(id: number): Observable<any> {
+    return this.httpClient.delete<any>(this.url + 'borrar/' + id);
+  }
+
+
 
 }

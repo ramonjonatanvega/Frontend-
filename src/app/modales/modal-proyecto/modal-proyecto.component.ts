@@ -26,7 +26,7 @@ export class ModalProyectoComponent implements OnInit {
 
     //creamos el grupo de controles para el formulario
     this.proyecForm = this.formBuilder.group({
-      id:[''],
+      id: [''],
       nombre: ['', [Validators.required]],
       imagen: ['', [Validators.required,]],
       fecha: ['', [Validators.required]],
@@ -63,10 +63,10 @@ export class ModalProyectoComponent implements OnInit {
 
 
 
-  /*Esta función sirve para mandar los valores del formulario, a la base de datos. Pasando a través del servicio de educación y posteriormente, del back-end.*/
+  /*Esta función sirve para mandar los valores del formulario, a la base de datos. Pasando a través del servicio de proyecto y posteriormente, del back-end.*/
   crearNuevoProyecto(): void {
     /*
-    Acá se obtiene la propiedad y valor de imgCurso y se introduce la url obtenida de la imagen, proveniente de Firebase y se la manda a la base de datos, 
+    Acá se obtiene la propiedad y valor de imagen y se introduce la url obtenida de la imagen, proveniente de Firebase y se la manda a la base de datos, 
     junto con los demás valores del formulario.
     */
     this.proyecForm.value.imagen = this.imagenesService.url;

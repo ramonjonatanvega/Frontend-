@@ -51,7 +51,7 @@ export class EditarProyectoComponent implements OnInit {
 
   cargarDetalle(id: number) {
     this.serviProyecto.detail(id).subscribe(
-      
+
       {
         next: (data) => {
           this.proyecForm.patchValue(data);
@@ -66,10 +66,7 @@ export class EditarProyectoComponent implements OnInit {
   }
 
   guardar(): void {
-    /*
-   Acá se obtiene la propiedad de imagen y valor del modal ubicado en el servicio de proyecto y se introduce la url obtenida de la imagen, 
-   proveniente de Firebase y se la manda a la base de datos, junto con los demás valores del formulario.
-   */
+
     this.serviProyecto.edit(this.proyecForm.value).subscribe(data => {
       alert(" Proyecto Editado");
       window.location.reload();
@@ -91,7 +88,7 @@ export class EditarProyectoComponent implements OnInit {
       })
   }
 
-  //Esta función obtiene la imagen del input de tipo File, para, posteriormente, mandarla a Firebase.
+  //Esta función obtiene la imagen del input de tipo File, para, posteriormente, mandarla a Firebase. ojo este metodo no esta siendo usado en editar
   uploadImage($event: any) {
     const name = 'Proyecto';
     this.imagenesService.uploadImage($event, name);

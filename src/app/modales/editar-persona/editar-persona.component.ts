@@ -33,16 +33,16 @@ export class EditarPersonaComponent implements OnInit {
       titulo: [''],
       ubicacion: [''],
       correo: [''],
-      contrasenia: ['',[Validators.required, Validators.minLength(8)]],
+      contrasenia: ['', [Validators.required, Validators.minLength(8)]],
       acerca_de: [''],
 
     })
 
   }
 
-  get Contrasenia(){
+  get Contrasenia() {
     return this.persoForm.get('contrasenia');
-    }
+  }
 
 
   ngOnInit(): void {
@@ -75,10 +75,7 @@ export class EditarPersonaComponent implements OnInit {
     )
   }
 
-  /*
-      Acá se obtiene la propiedad de logoEmpresa y valor del modal ubicado en el servicio de experiencia y se introduce la url obtenida de la imagen, 
-      proveniente de Firebase y se la manda a la base de datos, junto con los demás valores del formulario.
-      👇 */
+
   guardar(): void {
     this.serviPersona.edit(this.persoForm.value).subscribe(data => {
       alert("Nuevo Curso editado");
@@ -102,7 +99,7 @@ export class EditarPersonaComponent implements OnInit {
       })
   }
 
-  //Esta función obtiene la imagen del input de tipo File, para, posteriormente, mandarla a Firebase.
+  //Esta función obtiene la imagen del input de tipo File, para, posteriormente, mandarla a Firebase. ojo  este metodo no esta siendo usado en editar
   uploadImage($event: any) {
     const name = 'Experiencia'
     this.imagenesService.uploadImage($event, name);

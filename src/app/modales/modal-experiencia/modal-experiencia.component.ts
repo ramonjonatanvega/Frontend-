@@ -28,7 +28,7 @@ export class ModalExperienciaComponent implements OnInit {
 
     //Se crea el formulario, con sus propiedades y validaciones.
     this.experienForm = this.formBuilder.group({
-      id:[''],
+      id: [''],
       nombreEmpresa: ['', [Validators.required]],
       logoEmpresa: ['', [Validators.required]],
       puesto: ['', [Validators.required]],
@@ -73,7 +73,7 @@ export class ModalExperienciaComponent implements OnInit {
   /*Esta función sirve para mandar los valores del formulario, a la base de datos. Pasando a través del servicio de experiencia y posteriormente, del back-end. */
   onCreate(): void {
     /*
-   Acá se obtiene la propiedad y valor de imgCurso y se introduce la url obtenida de la imagen, proveniente de Firebase y se la manda a la base de datos, 
+   Acá se obtiene la propiedad y valor de logoEmpresa y se introduce la url obtenida de la imagen, proveniente de Firebase y se la manda a la base de datos, 
    junto con los demás valores del formulario.
    */
     this.experienForm.value.logoEmpresa = this.imagenesService.url;

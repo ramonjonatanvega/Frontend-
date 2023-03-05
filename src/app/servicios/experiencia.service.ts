@@ -13,34 +13,20 @@ export class ExperienciaService {
   URL = 'https://portfolio-jonatanvega.onrender.com/experiencia/'
   constructor(private httpClient: HttpClient) { }
 
-  
-  /* Propiedad de tipo experiencia. Lo utilizo para que los inputs, del modal editar, contengan los valores de la
-  card seleccionada.
-  */
-  experienfForm: Experiencia = {
-    id: null,
-    logoEmpresa: '',
-    puesto: '',
-    fechaInicio: '',
-    descripcion: '',
-    nombreEmpresa: '',
-    fechaFin: '',
-    esTrabajoActual: false,
-    personaId: 0,
-
-
-  }
-
 
   /* A partir de acá, comienzan los métodos responsables de comunicarse con el backend y así, lograr traer
 crear, actualizar o eliminar experiencias.
 */
+
+  // trae la lista de experiencia del backend
   public lista(): Observable<Experiencia[]> {
     return this.httpClient.get<Experiencia[]>(this.URL + `lista`);
   }
-  public listaPer(id: number): Observable<Experiencia[]> {
+
+
+  /*public listaPer(id: number): Observable<Experiencia[]> {
     return this.httpClient.get<Experiencia[]>(this.URL + `ver/${id}`);
-  }
+  }*/
 
   //ver Experiencia por id
   public detail(id: number): Observable<Experiencia> {
@@ -62,10 +48,10 @@ crear, actualizar o eliminar experiencias.
     return this.httpClient.delete<any>(this.URL + 'borrar/' + id);
   }
 
-  updateExp(experiencia: Experiencia): Observable<any> {
+  /*updateExp(experiencia: Experiencia): Observable<any> {
     const urlExpId = this.URL + `edit/${experiencia.id}`;
     return this.httpClient.put<any>(urlExpId, experiencia);
-  }
+  }*/
 
 
 }

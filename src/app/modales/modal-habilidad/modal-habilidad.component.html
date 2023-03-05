@@ -22,8 +22,8 @@
                     <div class="mb-3">
                         <label for="nombreHabili" class="form-label">Nombre de Habilidad</label>
                         <!--formControlName hace pedir nombre requerido y placeholder pide ingrese habilidad-->
-                        <input type="text" class="form-control text-center" id="nombreHabili" name="nombreHabilidad" required
-                            formControlName="nombreHabilidad" placeholder="Ingrese Habilidad......"
+                        <input type="text" class="form-control text-center" id="nombreHabili" name="nombreHabilidad"
+                            required formControlName="nombreHabilidad" placeholder="Ingrese Habilidad......"
                             [ngClass]="{'is-invalid': NombreHabilidad.errors && NombreHabilidad.touched, 'is-valid': !NombreHabilidad.errors && NombreHabilidad.touched}">
                         <div *ngIf="NombreHabilidad.errors && NombreHabilidad.touched">
                             <p *ngIf="NombreHabilidad.hasError('required')" class="text-danger">
